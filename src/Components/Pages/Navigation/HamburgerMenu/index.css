@@ -1,0 +1,27 @@
+/* Default styles for the hamburger menu: hidden */
+.links-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.links-container {
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.links-container.active {
+    transform: translateY(0);
+}
