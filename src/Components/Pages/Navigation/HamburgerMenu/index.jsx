@@ -1,21 +1,23 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Sling } from 'hamburger-react'
+import './index.css'
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ isOpen }) => {
 
-    const [isOpen, setOpen] = useState(false);
+    const handleClick = () => {
+        setOpen(false);
+    }
 
     return (
         <>
-            <Sling toggled={isOpen} toggle={setOpen} color="#FFFFFF"/>
-            (<div className={`links-container ${isOpen ? 'active': ''}`}>
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/dashboard">Dashboard</Link>
-                    <Link to="/mygifts">My Gifts</Link>
-                    <Link to="/settings">Settings</Link>
-                    <Link to="/familylogin">Log Out</Link>
+            <div className={`ham-modal-container ${isOpen ? 'active' : ''}`}>
+                <div className='links-container'>
+                        <Link to="/" onClick={handleClick}>Home</Link>
+                        <Link to="/about" onClick={handleClick}>About</Link>
+                        <Link to="/dashboard" onClick={handleClick}>Dashboard</Link>
+                        <Link to="/mygifts" onClick={handleClick}>My Gifts</Link>
+                        <Link to="/settings" onClick={handleClick}>Settings</Link>
+                        <Link to="/familylogin" onClick={handleClick}>Log Out</Link>
+                </div>
             </div>
         </>
     )
